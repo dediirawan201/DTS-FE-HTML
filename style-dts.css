@@ -1,0 +1,272 @@
+body{
+    font: 16px/28px arial,sans-serif;
+    background-color: #777;
+    color: #333;
+    
+}
+
+.container{
+    margin:  auto;
+    width: 960px;
+    background-color: #fff;
+    box-sizing: border-box;
+    position: relative;
+    padding: 30px;
+    
+    
+}
+.home {
+    text-align: center;
+    margin-top: 50px;
+}
+.home img{
+    border-radius: 50%;
+    width: 200px;
+    height: 210px;
+    border: 5px solid #666;
+}
+
+/* section work */
+section{
+ min-height: 800px;
+}
+section h2{
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+.top-bar{
+    position: sticky;
+    top: 0px;
+    /* right: 100%; */
+    /* left: 100%; */
+    width: 100%;
+    background-color: black;
+    height: 40px;
+    z-index: 9999;
+    
+
+}
+
+.header{
+    margin: 12px;
+    padding: 10px;
+    text-align: center;
+
+   
+}
+
+.judul{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.header ul, li{
+    display: inline-block;  
+    margin-top: 15px;
+    margin-right:15px;
+    background-color: aquamarine;
+}
+
+.main ol li{
+    display: block;
+}
+
+.header a{
+    text-decoration-line: none;
+    color: salmon;
+}
+
+.header a:hover{
+    background-color: lightskyblue;
+    padding: 3px;
+}
+
+
+
+hr{
+    width: 250px;
+    border-top: 3px solid #000;
+}
+h3{
+    color: aqua;
+}
+
+/* galeri */
+.gallery, h2{
+    margin-bottom: 20px;   
+}
+.gallery, hr{
+    margin-bottom: 20px;
+}
+
+.contener{
+    
+    width: 600px;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+
+/* overlay */
+.overlay{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: .8s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target{
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
+
+.overlay img{
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.7);
+}
+
+.overlay:target img{
+    animation: zoomAndFade 1s;
+}
+
+.overlay .close{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: white;
+    text-decoration-line: none;
+    border: 1px solid white;
+    line-height: 14px;
+    padding: 5px;
+    opacity: 0;
+}
+
+.overlay:target .close{
+    animation: slideDownFade .5s .5s forwards;
+}
+/* animation */
+@keyframes zoomAndFade{
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes fadeAja{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.gallery li {
+    width: 120px;
+    height: 120px;
+    border: 5px solid #666;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.gallery li span,
+.gallery li{
+    border-radius: 50%;
+}
+
+.clear{
+    clear: both;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200,200,200,0.5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: #333333;
+    text-shadow: 1px 1px 1px #ddd;
+    transform: scale(0) rotate(0);
+    opacity: 0;
+ 
+}
+
+.gallery a:hover span{
+    opacity: 1;
+    transition: .5s;
+    transform: scale(1) rotate(360deg);
+
+}
+
+/* NAVIGATION */
+.next, .prev{
+    width: 57px;
+    height: 93px;
+    background-image: url(../img/kananFix.png);
+    position: absolute;
+    color: white;
+    text-indent: -9999px;
+    top: 40%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/kiriFIx.png);
+    margin-left: -100px;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fadeAja .5s .5s forwards;
+}
+
+.footer{
+    position: absolute;
+    width: 87%;
+    height: 30px;
+    
+    background-color: #333;
+    bottom: 0;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer p {
+    color: #eee;
+    font-size: 0.9em;
+}
